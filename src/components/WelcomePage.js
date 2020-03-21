@@ -1,12 +1,16 @@
 import React from "react";
+import styled from 'styled-components';
 
 const StyledIMG = styled.img`
-border: 10px solid red;
-dislay: block;
+border: 10px solid red
+display: block;
 margin-left: auto;
-auto;
+margin-right: auto;
 width: 50%;
 `
+
+
+
 
 export default function WelcomePage() {
   return (

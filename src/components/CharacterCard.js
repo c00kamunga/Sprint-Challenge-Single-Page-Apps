@@ -1,11 +1,25 @@
 import React from "react";
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export default function CharacterCard() {
+
+const StyledDiv = styled.h1`
+color: salmon
+text-align: center
+font-size: 50px
+`
+
+const StyledSpecies = styled.p`
+color: blue;
+text-align: center;
+font-size: 30px
+`
+
+
+export default function CharacterCard(props) {
   return (
     <>
-      <h1>Name: {props.charac.name}</h1>
-      <h1>Species: {props.charac.species}</h1>
+    <StyledDiv>Name: {props.charac.name}</StyledDiv>
+    <StyledSpecies>Species: {props.charac.species}</StyledSpecies>
     </>
-  );
+    )
 }
