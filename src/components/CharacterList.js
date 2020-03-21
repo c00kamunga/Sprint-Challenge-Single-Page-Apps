@@ -10,9 +10,11 @@ export default function CharacterList() {
   useEffect(() => {
     const getCharacters = () => {
       axios
-        .get('https://rickandmortyapi.com/api/character/')
+        .get("https://rickandmortyapi.com/api/character/")
         .then(response => {
-          console.log(response);
+          console.log(response.data.results);
+          setCharacter(response.data.results);
+          setFilterCharacter(response.data.results);
         })
         .catch(error => {
           console.log(error);
@@ -20,11 +22,21 @@ export default function CharacterList() {
     };
     getCharacters();
   }, []);
-
+  function filter(userInput){
+    setFilterCharacter(character.filter)
+  }
 
   return (
+    <>
+    <SearchForm filter={filter}/>
     <section className="character-list">
-      <h2>TODO: `array.map()` over your state here!</h2>
+      <h2>Character List: </h2>
+      {filterCharacter.map((charac) => (
+        <>
+        <CharacterCard charac={charac}/>
+        </>
+      ))}
     </section>
+    </>
   );
 }
