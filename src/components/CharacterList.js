@@ -40,14 +40,14 @@ export default function CharacterList() {
   }
   return (
     <>
-    <SearchForm filter={filter}/>
+    <SearchForm filter={filter} character={character}/>
       <section className="character-list">
         <StyledCharacterHeader>Character List:</StyledCharacterHeader>
         {
-          filterCharacter.map((charac) => (
-            <>
-            <CharacterCard charac={charac}/>
-            </>
+          filterCharacter.map((charac, key) => (
+            <div key={key}>
+            <CharacterCard charac={charac} />
+            </div>
         ))
         }
       </section>
